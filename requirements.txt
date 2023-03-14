@@ -1,0 +1,9 @@
+numpy
+pandas
+palmerpenguins 
+plotnine 
+scikit-learn
+scikit-misc
+seaborn
+matplotlib
+statsmodels
