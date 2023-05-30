@@ -445,7 +445,6 @@ class DisplayOutputs(keras.callbacks.Callback):
 ## Learning rate schedule
 """
 
-
 class CustomSchedule(keras.optimizers.schedules.LearningRateSchedule):
     def __init__(
         self,
@@ -523,7 +522,10 @@ model.compile(optimizer=optimizer, loss=loss_fn)
 
 print("==FIT==")
 
-history = model.fit(ds, validation_data=val_ds, callbacks=[display_cb], epochs=100)
+history = model.fit(ds, validation_data=val_ds, callbacks=[display_cb], epochs=200)
+
+model.save_weights('./')
+# model.load_weights('./checkpoints/my_checkpoint')
 
 """
 In practice, you should train for around 100 epochs or more.
@@ -537,5 +539,3 @@ target:     <under the entry for may one, nineteen sixty,>
 prediction: <under the introus for may monee, nin the sixty,>
 ```
 """
-import pdb
-pdb.set_trace()
